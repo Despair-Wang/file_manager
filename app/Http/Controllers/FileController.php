@@ -56,6 +56,7 @@ class FileController extends Controller
         $result = File::create([
             'name' => $request->name,
             'content' => $request->content,
+            'authorized_area' => $request->area,
         ]);
         if ($result->id == '') {
             return $this->makeJson(0, $result, 'CREATE_ERROR');
